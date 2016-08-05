@@ -320,13 +320,13 @@ body {
     background-image: url($from-photo);
 }
 
-#sc-container {
+#sc-mb-container {
     top: 111px;
     left: 50px;
-    $sc-bg: '../images/sc-bg.png';
-    width: image-width($sc-bg);
-    height: image-height($sc-bg);
-    background-image: url($sc-bg);
+    $sc-mb-bg: '../images/sc-mb-bg.png';
+    width: image-width($sc-mb-bg);
+    height: image-height($sc-mb-bg);
+    background-image: url($sc-mb-bg);
 }
 
 .close-btn {
@@ -338,12 +338,12 @@ body {
     background-image: url($close-btn);
 }
 
-#sc-confirm {
+#sc-mb-confirm {
     top: 685px;
     left: 130px;
 }
 
-#sc-items {
+#sc-mb-items {
     top: 49px;
     left: 40px;
     width: 450px;
@@ -354,7 +354,7 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-.sc-item {
+.sc-mb-item {
     position: relative;
     float: left;
     margin: 6px;
@@ -364,6 +364,6 @@ body {
     border: 3px solid $main-brown;
 }
 
-#cover, #choose-pic, #sc {
+#cover, #choose-pic, #sc-mb {
     display: none;
 }

@@ -536,12 +536,12 @@ body {
   background-image: url("../images/from-photo.png");
 }
 
-#sc-container {
+#sc-mb-container {
   top: 111px;
   left: 50px;
   width: 544px;
   height: 789px;
-  background-image: url("../images/sc-bg.png");
+  background-image: url("../images/sc-mb-bg.png");
 }
 
 .close-btn {
@@ -552,12 +552,12 @@ body {
   background-image: url("../images/close-btn.png");
 }
 
-#sc-confirm {
+#sc-mb-confirm {
   top: 685px;
   left: 130px;
 }
 
-#sc-items {
+#sc-mb-items {
   top: 49px;
   left: 40px;
   width: 450px;
@@ -568,7 +568,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-.sc-item {
+.sc-mb-item {
   position: relative;
   float: left;
   margin: 6px;
@@ -578,7 +578,7 @@ body {
   border: 3px solid #9c6000;
 }
 
-#cover, #choose-pic, #sc {
+#cover, #choose-pic, #sc-mb {
   display: none;
 }
 
