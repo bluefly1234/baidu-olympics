@@ -578,7 +578,73 @@ body {
   border: 3px solid #9c6000;
 }
 
-#cover, #choose-pic, #sc-mb {
+.wide-content {
+  width: 480px;
+  height: 370px;
+  background: #ffffff;
+  border: 3px solid #9c6000;
+}
+
+#generating-container {
+  top: 200px;
+  left: 80px;
+}
+
+#mb-text {
+  top: 582px;
+  left: 44px;
+  width: 561px;
+  height: 297px;
+  background-image: url("../images/mb-text-bg.png");
+}
+
+#reselect {
+  width: 244px;
+  height: 75px;
+  background-image: url("../images/reselect.png");
+}
+
+.confirms {
+  width: 244px;
+  height: 75px;
+  background-image: url("../images/confirms.png");
+}
+
+#mb-text-confrim {
+  top: 895px;
+  left: 331px;
+}
+
+#reselect {
+  top: 895px;
+  left: 65px;
+}
+
+#choose-text-type {
+  top: 293px;
+  left: 57px;
+  width: 526px;
+  height: 331px;
+  background-image: url("../images/choose.png");
+}
+
+#mb-text-btn {
+  top: 68px;
+  left: 121px;
+  width: 284px;
+  height: 75px;
+  background-image: url("../images/mb-text-btn.png");
+}
+
+#personal-text-btn {
+  top: 187px;
+  left: 121px;
+  width: 284px;
+  height: 75px;
+  background-image: url("../images/personal-text-btn.png");
+}
+
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container {
   display: none;
 }
 

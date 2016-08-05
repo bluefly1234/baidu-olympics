@@ -364,6 +364,78 @@ body {
     border: 3px solid $main-brown;
 }
 
-#cover, #choose-pic, #sc-mb {
+.wide-content {
+    width: 480px;
+    height: 370px;
+    background: #ffffff;
+    border: 3px solid $main-brown;
+}
+
+#generating-container {
+    top: 200px;
+    left: 80px;
+}
+
+#mb-text {
+    top: 582px;
+    left: 44px;
+    $mb-text: '../images/mb-text-bg.png';
+    width: image-width($mb-text);
+    height: image-height($mb-text);
+    background-image: url($mb-text);
+}
+
+#reselect {
+    $reselect: '../images/reselect.png';
+    width: image-width($reselect);
+    height: image-height($reselect);
+    background-image: url($reselect);
+}
+
+.confirms {
+    $confirms: '../images/confirms.png';
+    width: image-width($confirms);
+    height: image-height($confirms);
+    background-image: url($confirms);
+}
+
+#mb-text-confrim {
+    top: 895px;
+    left: 331px;
+}
+
+#reselect {
+    top: 895px;
+    left: 65px;
+}
+
+#choose-text-type {
+    top: 293px;
+    left: 57px;
+    $choose: '../images/choose.png';
+    width: image-width($choose);
+    height: image-height($choose);
+    background-image: url($choose);
+}
+
+#mb-text-btn {
+    top: 68px;
+    left: 121px;
+    $mb-text-btn: '../images/mb-text-btn.png';
+    width: image-width($mb-text-btn);
+    height: image-height($mb-text-btn);
+    background-image: url($mb-text-btn);
+}
+
+#personal-text-btn {
+    top: 187px;
+    left: 121px;
+    $personal-text-btn: '../images/personal-text-btn.png';
+    width: image-width($personal-text-btn);
+    height: image-height($personal-text-btn);
+    background-image: url($personal-text-btn);
+}
+
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container {
     display: none;
 }
