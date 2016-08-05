@@ -371,7 +371,7 @@ body {
     border: 3px solid $main-brown;
 }
 
-#generating-container {
+#generating-container, #generated-container {
     top: 200px;
     left: 80px;
 }
@@ -436,6 +436,42 @@ body {
     background-image: url($personal-text-btn);
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container {
+#adjust-guide {
+    top: 113px;
+    left: 142px;
+    $adjust-guide: '../images/adjust-guide.png';
+    width: image-width($adjust-guide);
+    height: image-height($adjust-guide);
+    background-image: url($adjust-guide);
+}
+
+#save-reminder {
+    top: 629px;
+    left: 115px;
+    $save-reminder: '../images/save-reminder.png';
+    width: image-width($save-reminder);
+    height: image-height($save-reminder);
+    background-image: url($save-reminder);
+}
+
+#change-btn {
+    top: 725px;
+    left: 198px;
+    $change-btn: '../images/change-btn.png';
+    width: image-width($change-btn);
+    height: image-height($change-btn);
+    background-image: url($change-btn);
+}
+
+#tieba-logo {
+    top: 854px;
+    left: 233px;
+    $logo: '../images/logo.png';
+    width: image-width($logo);
+    height: image-height($logo);
+    background-image: url($logo);
+}
+
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page {
     display: none;
 }
