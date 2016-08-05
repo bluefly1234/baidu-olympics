@@ -525,6 +525,106 @@ body {
     color: #fff;
 }
 
+#template-text {
+    top: 103px;
+    left: 47px;
+    $template-text: '../images/text-bg.png';
+    width: image-width($template-text);
+    height: image-height($template-text);
+    background-image: url($template-text);
+}
+
+ul {
+    margin: 0;
+}
+
+#text-lists {
+    position: relative;
+    list: {
+        style: none;
+    }
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 36px;
+    color: $main-brown;
+    // background: rgba(255, 0, 0, 0.3);
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+
+    li {
+        position: relative;
+        margin: 0 40px 0 20px;
+        padding: 20px 0;
+        font: {
+            size: 28px;
+        }
+        border: {
+            bottom:  1px solid $main-brown;
+        }
+        // background: rgba(0, 255, 0, 0.3);
+        &:last-child {
+            border: {
+                bottom: none;
+            }
+
+        }
+    }
+
+    label {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        vertical-align: top;
+        // font: {
+        //     size: 26px;
+        // }
+        padding: 0 80px 0 0;
+        cursor: pointer;
+        &::before {
+            @include content("");
+            border: 4px solid $main-brown;
+            @include border-radius(50%);
+
+        }
+        // background: rgba(255, 0, 0, 0.4);
+    }
+
+    input[type="radio"], label::before {
+        width: 34px;
+        height: 34px;
+        top: 50%;
+        right: 0;
+        margin: {
+            top: -17px;
+        }
+        position: absolute;
+        cursor: pointer;
+    }
+
+    input[type="radio"] {
+        @include opacity(0);
+        display: inline-block;
+        vertical-align: middle;
+        z-index: 100;
+    }
+}
+
+.checked-circle {
+    top: 50%;
+    right: 0;
+    margin: {
+        top: -17px;
+    }
+    position: absolute;
+    cursor: pointer;
+    $checked: '../images/checked.png';
+    width: image-width($checked);
+    height: image-height($checked);
+    background-image: url($checked);
+}
+
 #cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input {
     display: none;
 }
