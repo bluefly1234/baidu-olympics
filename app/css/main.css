@@ -450,20 +450,20 @@ body {
   background-image: url("../images/go-dz-des.png");
 }
 
-#upload-title {
+#common-title {
   top: 41px;
   left: 38px;
   width: 555px;
   height: 162px;
-  background-image: url("../images/upload-title.png");
+  background-image: url("../images/common-title.png");
 }
 
-#upload-bottom {
+#common-bottom {
   bottom: 0;
   left: 0;
   width: 640px;
   height: 684px;
-  background-image: url("../images/upload-bottom.png");
+  background-image: url("../images/common-bottom.png");
 }
 
 #upload-container {

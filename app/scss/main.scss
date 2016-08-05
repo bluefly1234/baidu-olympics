@@ -231,22 +231,22 @@ body {
 }
 
 // upload start==========================================================
-#upload-title {
+#common-title {
     top: 41px;
     left: 38px;
-    $upload-title: '../images/upload-title.png';
-    width: image-width($upload-title);
-    height: image-height($upload-title);
-    background-image: url($upload-title);
+    $common-title: '../images/common-title.png';
+    width: image-width($common-title);
+    height: image-height($common-title);
+    background-image: url($common-title);
 }
 
-#upload-bottom {
+#common-bottom {
     bottom: 0;
     left: 0;
-    $upload-bottom: '../images/upload-bottom.png';
-    width: image-width($upload-bottom);
-    height: image-height($upload-bottom);
-    background-image: url($upload-bottom);
+    $common-bottom: '../images/common-bottom.png';
+    width: image-width($common-bottom);
+    height: image-height($common-bottom);
+    background-image: url($common-bottom);
 }
 
 #upload-container {
