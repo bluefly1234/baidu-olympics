@@ -472,6 +472,59 @@ body {
     background-image: url($logo);
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page {
+#mb-text-tabs {
+    top: 19px;
+    left: 21px;
+}
+
+.choose-tab {
+    position: relative;
+    float: left;
+    width: 258px;
+    height: 70px;
+    border: 3px solid $main-brown;
+    @include border-radius(40px);
+    color: $main-brown;
+    font: {
+        size: 27px;
+        weight: 700;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 70px;
+
+}
+
+#mb-tab {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#text-tab {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#personal-input {
+    top: 131px;
+    left: 47px;
+    width: 467px;
+    height: 114px;
+    border: none;
+    background: #ffffff;
+    padding: 12px;
+    font: {
+        size: 32px;
+    }
+    resize : none;
+}
+
+.active-tab {
+    background: $main-brown;
+    color: #fff;
+}
+
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input {
     display: none;
 }
