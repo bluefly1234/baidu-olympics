@@ -1,0 +1,369 @@
+/*!
+**  Author: Kale Chao | FakeCityMan
+**  Blog: kalechao87@github.io
+**/
+@import "normalize-reset", "compass/css3";
+
+/*
+ * Remove the gap between images and the bottom of their containers
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+* Hide visually and from screenreaders, but maintain layout
+*/
+
+.invisible {
+   visibility: hidden;
+}
+
+/**
+ * Clearfix helper
+ * Used to contain floats: http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+ Author's custom styles
+ ========================================================================== */
+ *,
+ *:after,
+ *:before {
+    @include box-sizing(border-box);
+    // -webkit-user-select:none;
+    // -webkit-touch-callout:none;
+ }
+
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+/* ==========================================================================
+ 定义变量
+ ========================================================================== */
+$main-bgcolor: #2eaffa;
+$main-color: #000;
+$main-red: #c50000;
+$main-green: #83ac14;
+$main-brown: #9c6000;
+
+/* ==========================================================================
+定义变量结束
+========================================================================== */
+
+body {
+    font-family: 'Avenir Next', 'Helvetica Neue', 'Lato', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $main-bgcolor;
+    color: $main-color;
+    overflow: hidden;
+    font: {
+        size: 24px;
+    }
+}
+
+.ab-element {
+    position: absolute;
+}
+
+.block-img {
+    display: block;
+    max-width: 100%;
+}
+
+.ab-img {
+    position: absolute;
+}
+
+.ab-block-img {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+}
+
+.hvcenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate3d(-50%, -50%, 0));
+}
+
+.hcenter {
+    position: absolute;
+    left: 50%;
+    @include transform(translate3d(-50%, 0, 0));
+}
+
+.vcenter {
+    position: absolute;
+    top: 50%;
+    @include transform(translate3d(0, -50%, 0));
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include background-size(cover);
+    overflow: hidden;
+}
+
+.container1043 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1043px;
+    @include background-size(cover);
+    overflow: hidden;
+}
+
+.scrolly-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+}
+
+// cover start=======================
+#ribao {
+    top: 30px;
+    left: 40px;
+    $ribao: '../images/ribao.png';
+    width: image-width($ribao);
+    height: image-height($ribao);
+    background-image: url($ribao);
+}
+
+#tap-me-container {
+    top: 192px;
+    left: 172px;
+    width: 221px;
+    height: 45px;
+}
+
+#tap-me {
+    top: 0;
+    left: 59px;
+    $tap-me: '../images/tap-me.png';
+    width: image-width($tap-me);
+    height: image-height($tap-me);
+    background-image: url($tap-me);
+}
+
+#left-hand {
+    top: 7px;
+    left: 0;
+    $left-hand: '../images/left-hand.png';
+    width: image-width($left-hand);
+    height: image-height($left-hand);
+    background-image: url($left-hand);
+}
+
+#right-hand {
+    top: 6px;
+    right: 0;
+    $right-hand: '../images/right-hand.png';
+    width: image-width($right-hand);
+    height: image-height($right-hand);
+    background-image: url($right-hand);
+}
+
+#cover-bottom {
+    bottom: 0;
+    left: 0;
+    $cover-bottom: '../images/cover-bottom.png';
+    width: image-width($cover-bottom);
+    height: image-height($cover-bottom);
+    background-image: url($cover-bottom);
+}
+
+#theme {
+    top: 260px;
+    left: 51px;
+    $theme: '../images/theme.png';
+    width: image-width($theme);
+    height: image-height($theme);
+    background-image: url($theme);
+}
+
+#go-dz {
+    top: 804px;
+    left: 180px;
+    $go-dz: '../images/go-dz.png';
+    width: image-width($go-dz);
+    height: image-height($go-dz);
+    background-image: url($go-dz);
+}
+
+#go-dz-des {
+    top: 893px;
+    left: 180px;
+    $go-dz-des: '../images/go-dz-des.png';
+    width: image-width($go-dz-des);
+    height: image-height($go-dz-des);
+    background-image: url($go-dz-des);
+}
+
+// upload start==========================================================
+#upload-title {
+    top: 41px;
+    left: 38px;
+    $upload-title: '../images/upload-title.png';
+    width: image-width($upload-title);
+    height: image-height($upload-title);
+    background-image: url($upload-title);
+}
+
+#upload-bottom {
+    bottom: 0;
+    left: 0;
+    $upload-bottom: '../images/upload-bottom.png';
+    width: image-width($upload-bottom);
+    height: image-height($upload-bottom);
+    background-image: url($upload-bottom);
+}
+
+#upload-container {
+    top: 240px;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    border: 3px solid $main-brown;
+    background: rgba(255, 255, 255, 0.7);
+    @include transform(translate3d(-50%, 0, 0));
+}
+
+#upload-icon {
+    $upload-icon: '../images/upload-icon.png';
+    top: 50%;
+    left: 50%;
+    width: image-width($upload-icon);
+    height: image-height($upload-icon);
+    background-image: url($upload-icon);
+    @include transform(translate3d(-50%, -50%, 0));
+}
+
+.confirm {
+    $confirm: '../images/confirm.png';
+    width: image-width($confirm);
+    height: image-height($confirm);
+    background-image: url($confirm);
+}
+
+.confirm-blue {
+    $confirm-blue: '../images/confirm-blue.png';
+    width: image-width($confirm-blue);
+    height: image-height($confirm-blue);
+    background-image: url($confirm-blue);
+}
+
+#upload-confirm {
+    top: 817px;
+    left: 178px;
+}
+
+// choose pic start===========================================
+.trans-bg {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#choose {
+    top: 293px;
+    left: 57px;
+    $choose: '../images/choose.png';
+    width: image-width($choose);
+    height: image-height($choose);
+    background-image: url($choose);
+}
+
+#from-sc {
+    top: 68px;
+    left: 123px;
+    $from-sc: '../images/from-sc.png';
+    width: image-width($from-sc);
+    height: image-height($from-sc);
+    background-image: url($from-sc);
+}
+
+#from-photo {
+    top: 187px;
+    left: 123px;
+    $from-photo: '../images/from-photo.png';
+    width: image-width($from-photo);
+    height: image-height($from-photo);
+    background-image: url($from-photo);
+}
+
+#sc-container {
+    top: 111px;
+    left: 50px;
+    $sc-bg: '../images/sc-bg.png';
+    width: image-width($sc-bg);
+    height: image-height($sc-bg);
+    background-image: url($sc-bg);
+}
+
+.close-btn {
+    top: -28px;
+    right: -17px;
+    $close-btn: '../images/close-btn.png';
+    width: image-width($close-btn);
+    height: image-height($close-btn);
+    background-image: url($close-btn);
+}
+
+#sc-confirm {
+    top: 685px;
+    left: 130px;
+}
+
+#sc-items {
+    top: 49px;
+    left: 40px;
+    width: 450px;
+    height: 613px;
+    // background: rgba(0, 0, 0, 0.4);
+    overflow-x: hidden;
+    overflow-y: scroll; /* has to be scroll, not auto */
+    -webkit-overflow-scrolling: touch;
+}
+
+.sc-item {
+    position: relative;
+    float: left;
+    margin: 6px;
+    width: 138px;
+    height: 138px;
+    background: #ffffff;
+    border: 3px solid $main-brown;
+}
+
+#cover, #choose-pic, #sc {
+    display: none;
+}
