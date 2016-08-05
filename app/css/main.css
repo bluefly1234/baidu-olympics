@@ -802,7 +802,7 @@ ul {
   background-image: url("../images/checked.png");
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input {
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page {
   display: none;
 }
 
