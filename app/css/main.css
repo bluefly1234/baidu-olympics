@@ -748,7 +748,7 @@ body {
   top: 103px;
   left: 47px;
   width: 467px;
-  height: 173px;
+  height: 163px;
 }
 
 ul {
@@ -771,7 +771,7 @@ ul {
 #text-lists li {
   position: relative;
   margin: 0 40px 0 20px;
-  padding: 20px 0;
+  padding: 18px 0;
   font-size: 28px;
   border-bottom: 1px solid #9c6000;
 }
@@ -818,6 +818,7 @@ ul {
   cursor: pointer;
   width: 34px;
   height: 34px;
+  background-image: url("../images/checked.png");
 }
 
 #template-pics {
@@ -878,8 +879,12 @@ ul {
   border: 3px solid #c50000;
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page, #template-text, #template-pics {
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #template, #common-page {
   display: none;
+}
+
+#template-text, #personal-input {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */

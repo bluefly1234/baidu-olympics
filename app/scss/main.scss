@@ -615,7 +615,7 @@ ul {
     li {
         position: relative;
         margin: 0 40px 0 20px;
-        padding: 20px 0;
+        padding: 18px 0;
         font: {
             size: 28px;
         }
@@ -681,7 +681,7 @@ ul {
     $checked: '../images/checked.png';
     width: image-width($checked);
     height: image-height($checked);
-    // background-image: url($checked);
+    background-image: url($checked);
 }
 
 #template-pics {
@@ -749,6 +749,10 @@ ul {
 
 
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page, #template-text, #template-pics {
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #template, #common-page,  {
     display: none;
+}
+
+#template-text, #personal-input {
+    visibility: hidden;
 }

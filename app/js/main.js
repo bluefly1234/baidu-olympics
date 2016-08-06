@@ -3,6 +3,7 @@
   Blog: http://kalechao87.github.io/
 **/
 var choosePicType = ''; // 添加上传照片类型
+var chooseTextType = ''; // 添加选择文本类型
 var scType = ''; // 素材类型是背景，还是各种类型表情
 var choosedPicVal = ''; // 点选背景模板，表情模板的值，即图片src
 
@@ -101,7 +102,7 @@ function setBgImages() {
     $('#personal-text-btn').css('background-image', 'url(images/personal-text-btn.png)');
     $('#adjust-guide').css('background-image', 'url(images/adjust-guide.png)');
     $('#template-text').css('background-image', 'url(images/text-bg.png)');
-    $('.checked-circle').css('background-image', 'url(images/checked-circle.png)');
+    $('.checked-circle').css('background-image', 'url(images/checked.png)');
     $('.swiper-button-prev').css('background-image', 'url(images/left-arrow.png)');
     $('.swiper-button-next').css('background-image', 'url(images/right-arrow.png)');
 
@@ -110,9 +111,6 @@ function setBgImages() {
     $('#save-reminder').css('background-image', 'url(images/save-reminder.png)');
     $('#change-btn').css('background-image', 'url(images/change-btn.png)');
     $('#tieba-logo').css('background-image', 'url(images/logo.png)');
-
-
-
 
 }
 
@@ -290,7 +288,9 @@ $('#sc-mb-confirm').on('touchstart', confirmChooseBgOrFacePic);
 // 上传页切换至模板页面
 function goToTemplatePage() {
     // 先判断是否上传了照片，没上传需alert并return
-    var templatePageShow = new TimelineMax();
+    var templatePageShow = new TimelineMax({
+        onStart: initSwiper
+    });
     templatePageShow.set('#template', {display: 'block', x: 640, autoAlpha: 1})
         .to('#upload-page', 0.8, {x: -640, ease: Power3.easeInOut})
         .to('#template', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
@@ -311,6 +311,77 @@ $('#upload-confirm').on('touchstart', goToTemplatePage);
 
 // 表情图文页
 $('#reselect').on('touchstart', backToUploadPage);
+
+// 模板页表情模板、配文按钮切换
+function changeMbTextTabs() {
+    console.log(this);
+    $('.choose-tab').removeClass('active-tab');
+    $(this).addClass('active-tab');
+    if (this.id == 'mb-tab') {
+        console.log('表情模板tab');
+        TweenMax.to(['#template-text', '#personal-input'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#template-pics', 0.4, {autoAlpha: 1});
+    }else if (this.id == 'text-tab') {
+        console.log('配文模板');
+        showTextTypeChoose();
+    }
+}
+
+$('.choose-tab').on('touchstart', changeMbTextTabs);
+
+// 配文页选择配文类型
+function showTextTypeChoose() {
+    var textTypeChooseShow = new TimelineMax();
+    textTypeChooseShow.set('#choose-text-type-container', {display: 'block', autoAlpha: 1})
+        .fromTo('#choose-text-type-container', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+        .fromTo('#choose-text-type', 0.6, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.2), force3D: true}, '-=0.2')
+}
+
+// 隐藏表情配文页配文类型弹窗
+function hideTextTypeChoose() {
+    var textTypeChooseHide = new TimelineMax({
+        onStart: textChooseTypeResult
+    });
+    textTypeChooseHide.to('#choose-text-type', 0.6, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.2), force3D: true})
+        .to('#choose-text-type-container', 0.4, {autoAlpha: 0}, '-=0.1')
+        .set('#choose-text-type-container', {display: 'none'})
+}
+
+// 点击文案类型按钮隐藏弹窗并判断何种类型
+$('.text-type-btn').on('touchstart', function () {
+    console.log(this.id);
+    if (this.id == 'mb-text-btn') {
+        console.log('去模板文本界面');
+        chooseTextType = 'mbText'; // 文案模板
+    }else if (this.id == 'personal-text-btn') {
+        console.log('去个性文本界面');
+        chooseTextType = 'gxText'; // 个性文案
+    }
+    hideTextTypeChoose();
+});
+
+// 显示添加文本类型功能，即显示个性输入界面还是选择文本模板界面
+function textChooseTypeResult() {
+    // 选择素材库背景按钮
+    if (chooseTextType == 'mbText') {
+        TweenMax.to(['#template-pics', '#personal-input'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#template-text', 0.4, {autoAlpha: 1});
+    }else if (chooseTextType == 'gxText') {
+        TweenMax.to(['#template-pics', '#template-text'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#personal-input', 0.4, {autoAlpha: 1});
+    }
+
+}
+
+// 模板页表情模板点选功能
+function selectBqType() {
+    console.log(this);
+    $('.template-pic-type').removeClass('pic-type-active');
+    $(this).addClass('pic-type-active');
+}
+
+// 点选表情模板类缩略图
+$('.template-pic-type').on('touchstart', selectBqType);
 
 
 // 模板页面切换至最终页
@@ -338,42 +409,31 @@ $('#mb-text-confrim').on('touchstart', goToGeneratedPage);
 // 点击最终页换一组按钮
 $('#change-btn').on('touchstart', backToTemplatePage);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 (function($) {
     $(document).ready(function() {
         console.log('Ready');
     });  //Document ready
 })(jQuery);
 
-// 表情模板轮播
-var swiper = new Swiper('.swiper-container', {
-    pagination: '.swiper-pagination',
-    slidesPerView: 3,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    paginationClickable: true,
-    spaceBetween: 10,
-    loop: true
-});
+function initSwiper() {
+    // 表情模板轮播
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 3,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 10,
+        loop: true
+    });
+}
+
+
 
 // 文字列表radio样式功能，获取文本内容 start
 var radioBoxElements = Array.prototype.slice.call( document.querySelectorAll( '#text-lists input[type="radio"]' ) );
 var textContent = '';
-// var contentArea = document.getElementById('blessing-content');
+var contentArea = document.getElementById('display-text');
 
 function createCheckedCircle() {
     var checkedCircle = document.createElement("div");
@@ -389,6 +449,7 @@ function controlRadiobox(el) {
         textContent = el.parentNode.querySelector( 'label' ).innerHTML; //获取label文本
         console.log(textContent);
         // contentArea.value = textContent;  // textarea文本内容设置为选择内容
+        contentArea.innerHTML = textContent;  // 显示文本内容设置为选择内容
         resetRadio(el);
         el.parentNode.appendChild( checkedCircle );
 
