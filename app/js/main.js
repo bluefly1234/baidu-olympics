@@ -6,7 +6,6 @@ var choosePicType = ''; // 添加上传照片类型
 var scType = ''; // 素材类型是背景，还是各种类型表情
 var choosedPicVal = ''; // 点选背景模板，表情模板的值，即图片src
 
-
 // 预加载
 var sourceArr = [
     'images/adjust-guide.png',
@@ -83,6 +82,15 @@ function setBgImages() {
     // upload page
     $('#upload-icon').css('background-image', 'url(images/upload-icon.png)');
     $('#upload-confirm').css('background-image', 'url(images/confirm.png)');
+
+    // 模板选择弹窗
+    $('.confirm-blue').css('background-image', 'url(images/confirm-blue.png)');
+    $('#choose').css('background-image', 'url(images/choose.png)');
+    $('#from-sc').css('background-image', 'url(images/from-sc.png)');
+    $('#from-photo').css('background-image', 'url(images/from-photo.png)');
+    $('#sc-mb-container').css('background-image', 'url(images/sc-mb-bg.png)');
+    $('.close-btn').css('background-image', 'url(images/close-btn.png)');
+
 
 
 }
@@ -246,7 +254,7 @@ function setMbPics() {
 // 确认是否选择了背景或表情
 function confirmChooseBgOrFacePic() {
     // 先判断是否选择了背景或表情，没选择的话return
-    if (choosedPicVal=='1') {
+    if (choosedPicVal=='') {
         alert('请选择');
         return;
     }else{
@@ -257,6 +265,57 @@ function confirmChooseBgOrFacePic() {
 
 // 点击背景素材、表情素材选择界面确定按钮
 $('#sc-mb-confirm').on('touchstart', confirmChooseBgOrFacePic);
+
+// 上传页切换至模板页面
+function goToTemplatePage() {
+    // 先判断是否上传了照片，没上传需alert并return
+    var templatePageShow = new TimelineMax();
+    templatePageShow.set('#template', {display: 'block', x: 640, autoAlpha: 1})
+        .to('#upload-page', 0.8, {x: -640, ease: Power3.easeInOut})
+        .to('#template', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .set('#upload-page', {display: 'none', autoAlpha: 0})
+}
+
+// 模板页面返回切换至上传页
+function backToUploadPage() {
+    var uploadPageBackShow = new TimelineMax();
+    uploadPageBackShow.set('#upload-page', {display: 'block', autoAlpha: 1})
+        .to('#upload-page', 0.8, {x: 0, ease: Power3.easeInOut})
+        .to('#template', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .set('#template', {display: 'none', autoAlpha: 0})
+}
+
+// 点击上传照片页确认按钮
+$('#upload-confirm').on('touchstart', goToTemplatePage);
+
+// 表情图文页
+$('#reselect').on('touchstart', backToUploadPage);
+
+
+// 模板页面切换至最终页
+function goToGeneratedPage() {
+    // 先判断表情模板是否选择，文字是否选择填写
+    var generatedPageShow = new TimelineMax();
+    generatedPageShow.set('#generated-page', {display: 'block', x: 640, autoAlpha: 1})
+        .to('#template', 0.8, {x: -640, ease: Power3.easeInOut})
+        .to('#generated-page', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .set('#template', {display: 'none', autoAlpha: 0})
+}
+
+// 最终页返回至模板页
+function backToTemplatePage() {
+    var templatePageBackShow = new TimelineMax();
+    templatePageBackShow.set('#template', {display: 'block', autoAlpha: 1})
+        .to('#template', 0.8, {x: 0, ease: Power3.easeInOut})
+        .to('#generated-page', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .set('#generated-page', {display: 'none', autoAlpha: 0})
+}
+
+// 点击表情文字页确认按钮
+$('#mb-text-confrim').on('touchstart', goToGeneratedPage);
+
+// 点击最终页换一组按钮
+$('#change-btn').on('touchstart', backToTemplatePage);
 
 
 

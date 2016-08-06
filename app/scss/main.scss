@@ -306,7 +306,7 @@ body {
     $confirm-blue: '../images/confirm-blue.png';
     width: image-width($confirm-blue);
     height: image-height($confirm-blue);
-    background-image: url($confirm-blue);
+    // background-image: url($confirm-blue);
 }
 
 #upload-confirm {
@@ -325,7 +325,7 @@ body {
     $choose: '../images/choose.png';
     width: image-width($choose);
     height: image-height($choose);
-    background-image: url($choose);
+    // background-image: url($choose);
 }
 
 #from-sc {
@@ -334,7 +334,7 @@ body {
     $from-sc: '../images/from-sc.png';
     width: image-width($from-sc);
     height: image-height($from-sc);
-    background-image: url($from-sc);
+    // background-image: url($from-sc);
 }
 
 #from-photo {
@@ -343,7 +343,7 @@ body {
     $from-photo: '../images/from-photo.png';
     width: image-width($from-photo);
     height: image-height($from-photo);
-    background-image: url($from-photo);
+    // background-image: url($from-photo);
 }
 
 #sc-mb-container {
@@ -352,7 +352,7 @@ body {
     $sc-mb-bg: '../images/sc-mb-bg.png';
     width: image-width($sc-mb-bg);
     height: image-height($sc-mb-bg);
-    background-image: url($sc-mb-bg);
+    // background-image: url($sc-mb-bg);
 }
 
 .close-btn {
@@ -361,7 +361,7 @@ body {
     $close-btn: '../images/close-btn.png';
     width: image-width($close-btn);
     height: image-height($close-btn);
-    background-image: url($close-btn);
+    // background-image: url($close-btn);
 }
 
 #sc-mb-confirm {

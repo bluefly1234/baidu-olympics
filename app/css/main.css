@@ -509,7 +509,6 @@ body {
 .confirm-blue {
   width: 284px;
   height: 75px;
-  background-image: url("../images/confirm-blue.png");
 }
 
 #upload-confirm {
@@ -526,7 +525,6 @@ body {
   left: 57px;
   width: 526px;
   height: 331px;
-  background-image: url("../images/choose.png");
 }
 
 #from-sc {
@@ -534,7 +532,6 @@ body {
   left: 123px;
   width: 284px;
   height: 75px;
-  background-image: url("../images/from-sc.png");
 }
 
 #from-photo {
@@ -542,7 +539,6 @@ body {
   left: 123px;
   width: 284px;
   height: 75px;
-  background-image: url("../images/from-photo.png");
 }
 
 #sc-mb-container {
@@ -550,7 +546,6 @@ body {
   left: 50px;
   width: 544px;
   height: 789px;
-  background-image: url("../images/sc-mb-bg.png");
 }
 
 .close-btn {
@@ -558,7 +553,6 @@ body {
   right: -17px;
   width: 70px;
   height: 70px;
-  background-image: url("../images/close-btn.png");
 }
 
 #sc-mb-confirm {
