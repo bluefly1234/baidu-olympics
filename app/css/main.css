@@ -620,6 +620,14 @@ body {
   line-height: 82px;
 }
 
+#display-text-pic {
+  display: block;
+  position: absolute;
+  max-width: 100%;
+  top: 288px;
+  left: 0;
+}
+
 #mb-text {
   top: 582px;
   left: 44px;

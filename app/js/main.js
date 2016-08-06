@@ -378,6 +378,23 @@ function selectBqType() {
     console.log(this);
     $('.template-pic-type').removeClass('pic-type-active');
     $(this).addClass('pic-type-active');
+    if (this.id=='kx') {
+        choosePicType='kx'; // 开心
+    }else if (this.id=='bkx') {
+        choosePicType='bkx'; // 不开心
+    }else if (this.id=='ku') {
+        choosePicType='ku'; // 哭
+    }else if (this.id=='mm') {
+        choosePicType='mm'; // 卖萌
+    }else if (this.id=='sb') {
+        choosePicType='sb'; // 撕逼
+    }else if (this.id=='zb') {
+        choosePicType='zb'; // 装逼
+    }else if (this.id=='qt') {
+        choosePicType='qt'; // 哭
+    }
+
+    showMbFace(); // 去弹窗选择
 }
 
 // 点选表情模板类缩略图
@@ -423,8 +440,7 @@ function initSwiper() {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         paginationClickable: true,
-        spaceBetween: 10,
-        loop: true
+        spaceBetween: 10
     });
 }
 
@@ -466,3 +482,8 @@ function resetRadio( el ) {
     } );
 }
 // 文本模板列表radio样式功能，获取文版模板内容 end
+
+$('#personal-input').on('input', function () {
+    console.log($('#personal-input').val());
+    $('#display-text').html($('#personal-input').val());
+});
