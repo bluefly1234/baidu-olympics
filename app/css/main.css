@@ -458,7 +458,6 @@ body {
   left: 38px;
   width: 555px;
   height: 162px;
-  background-image: url("../images/common-title.png");
 }
 
 #common-bottom {
@@ -466,7 +465,6 @@ body {
   left: 0;
   width: 640px;
   height: 684px;
-  background-image: url("../images/common-bottom.png");
 }
 
 #upload-container {
@@ -487,17 +485,25 @@ body {
   left: 50%;
   width: 130px;
   height: 130px;
-  background-image: url("../images/upload-icon.png");
   -moz-transform: translate3d(-50%, -50%, 0);
   -ms-transform: translate3d(-50%, -50%, 0);
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d(-50%, -50%, 0);
 }
 
+#uploaded-pic {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  max-width: 100%;
+}
+
 .confirm {
   width: 284px;
   height: 75px;
-  background-image: url("../images/confirm.png");
 }
 
 .confirm-blue {

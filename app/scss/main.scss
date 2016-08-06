@@ -252,7 +252,7 @@ body {
     $common-title: '../images/common-title.png';
     width: image-width($common-title);
     height: image-height($common-title);
-    background-image: url($common-title);
+    // background-image: url($common-title);
 }
 
 #common-bottom {
@@ -261,9 +261,10 @@ body {
     $common-bottom: '../images/common-bottom.png';
     width: image-width($common-bottom);
     height: image-height($common-bottom);
-    background-image: url($common-bottom);
+    // background-image: url($common-bottom);
 }
 
+// upload page
 #upload-container {
     top: 240px;
     left: 50%;
@@ -280,15 +281,25 @@ body {
     left: 50%;
     width: image-width($upload-icon);
     height: image-height($upload-icon);
-    background-image: url($upload-icon);
+    // background-image: url($upload-icon);
     @include transform(translate3d(-50%, -50%, 0));
+}
+
+#uploaded-pic {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    max-width: 100%;
 }
 
 .confirm {
     $confirm: '../images/confirm.png';
     width: image-width($confirm);
     height: image-height($confirm);
-    background-image: url($confirm);
+    // background-image: url($confirm);
 }
 
 .confirm-blue {
