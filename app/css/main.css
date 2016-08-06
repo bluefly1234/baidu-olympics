@@ -478,6 +478,7 @@ body {
   -ms-transform: translate3d(-50%, 0, 0);
   -webkit-transform: translate3d(-50%, 0, 0);
   transform: translate3d(-50%, 0, 0);
+  overflow: hidden;
 }
 
 #upload-icon {
@@ -497,7 +498,6 @@ body {
   top: 0;
   left: 0;
   width: 500px;
-  height: 500px;
   max-width: 100%;
 }
 
@@ -593,11 +593,38 @@ body {
   left: 80px;
 }
 
+#generating-pic-container {
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 288px;
+  overflow: hidden;
+}
+
+#generating-pic {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  max-width: 100%;
+}
+
+#display-text {
+  top: 288px;
+  width: 100%;
+  height: 82px;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 82px;
+}
+
 #mb-text {
   top: 582px;
   left: 44px;
   width: 561px;
-  height: 297px;
+  height: 309px;
 }
 
 #reselect {

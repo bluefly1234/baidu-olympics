@@ -273,7 +273,9 @@ body {
     border: 3px solid $main-brown;
     background: rgba(255, 255, 255, 0.7);
     @include transform(translate3d(-50%, 0, 0));
+    overflow: hidden;
 }
+
 
 #upload-icon {
     $upload-icon: '../images/upload-icon.png';
@@ -291,7 +293,6 @@ body {
     top: 0;
     left: 0;
     width: 500px;
-    height: 500px;
     max-width: 100%;
 }
 
@@ -400,6 +401,38 @@ body {
 #generating-container, #generated-container {
     top: 200px;
     left: 80px;
+}
+
+#generating-pic-container {
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 288px;
+    overflow: hidden;
+}
+
+#generating-pic {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 480px;
+    max-width: 100%;
+}
+
+#display-text {
+    top: 288px;
+    width: 100%;
+    height: 82px;
+    font: {
+        size: 28px;
+        weight: 600;
+    }
+    text: {
+        align: center;
+    }
+    line-height: 82px;
+
 }
 
 #mb-text {
