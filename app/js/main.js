@@ -2,6 +2,10 @@
   Author: Kale Chao | FakeCityMan
   Blog: http://kalechao87.github.io/
 **/
+var choosePicType = ''; // 添加上传照片类型
+var scType = ''; // 素材类型是背景，还是各种类型表情
+var choosedPicVal = ''; // 点选背景模板，表情模板的值，即图片src
+
 
 // 预加载
 var sourceArr = [
@@ -81,7 +85,6 @@ function setBgImages() {
     $('#upload-confirm').css('background-image', 'url(images/confirm.png)');
 
 
-
 }
 
 // 首页动画功能
@@ -158,11 +161,116 @@ function showCommonPage() {
         .fromTo('#common-title', 0.8, {autoAlpha: 0, y: -320}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.3')
 }
 
+// 初次显示上传页
 function showUploadPage() {
     var uploadPageShow = new TimelineMax();
     uploadPageShow.set('#upload-page', {display: 'block', autoAlpha: 1, perspective: 500})
     .staggerFromTo(['#upload-container', '#upload-confirm'], 0.6, {autoAlpha: 0, z: -300}, {autoAlpha: 1, z: 0, ease: Back.easeOut.config(1.2)}, 0.12)
 }
+
+// 点击上传加号调用显示选择照片类型弹窗
+$('#upload-icon').on('touchstart', showPicTypeChoose);
+
+// 显示上传页选择照片类型
+function showPicTypeChoose() {
+    var picTypeChooseShow = new TimelineMax();
+    picTypeChooseShow.set('#choose-pic', {display: 'block', autoAlpha: 1})
+        .fromTo('#choose-pic', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+        .fromTo('#choose', 0.6, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.2), force3D: true}, '-=0.2')
+}
+
+// 隐藏上传页照片类型弹窗
+function hidePicTypeChoose() {
+    var picTypeChooseHide = new TimelineMax({
+        onComplete: uploadChooseTypeResult
+    });
+    picTypeChooseHide.to('#choose', 0.6, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.2), force3D: true})
+        .to('#choose-pic', 0.4, {autoAlpha: 0}, '-=0.1')
+        .set('#choose-pic', {display: 'none'})
+}
+
+// 点击上传照片类型按钮隐藏弹窗并判断何种类型
+$('.pic-type-btn').on('touchstart', function () {
+    console.log(this.id);
+    if (this.id == 'from-sc') {
+        console.log('去素材库');
+        choosePicType = 'sck'; // 素材库
+        scType = 'scBg'; // 素材类型为背景图片
+    }else if (this.id == 'from-photo') {
+        console.log('点击的是相册类型');
+        choosePicType = 'xc'; // 相册
+    }
+    hidePicTypeChoose();
+});
+
+// 显示添加照片选择功能，即显示素材库选择界面还是相册添加界面
+function uploadChooseTypeResult() {
+    // 选择素材库背景按钮
+    if (choosePicType=='sck') {
+        showMbFace();
+    }else if (choosePicType=='xc') {
+        // 相册添加，调用手机相册、相机功能
+        alert('去手机自带相机、相册添加');
+    }
+
+}
+
+// 显示模板照片、表情照片界面
+function showMbFace() {
+    setMbPics(); // 根据类型初始化选择显示的缩略图
+    var mbFaceShow = new TimelineMax();
+    mbFaceShow.set('#sc-mb', {display: 'block'})
+        .fromTo('#sc-mb', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
+        .fromTo('#sc-mb-container', 0.8, {autoAlpha: 0, y: -1000}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)})
+}
+
+// 隐藏模板照片、表情照片选择界面
+function hideMbFace() {
+    var mbFaceHide = new TimelineMax();
+    mbFaceHide.to('#sc-mb-container', 0.6, {autoAlpha: 0, y: -1000, ease: Back.easeIn.config(1.2)})
+        .to('#sc-mb', 0.3, {autoAlpha: 0}, '-=0.1')
+        .set('#sc-mb', {display: 'none'})
+}
+
+// 关闭模板照片、表情照片选择界面
+$('#close-sc-mb').on('touchstart', hideMbFace);
+
+// 设置缩略图， 根据类型初始化选择显示的缩略图
+function setMbPics() {
+    if (scType=='scBg') {
+        // 设置照片背景素材库缩略图
+        console.log('要设置背景缩略图');
+    }
+}
+
+// 确认是否选择了背景或表情
+function confirmChooseBgOrFacePic() {
+    // 先判断是否选择了背景或表情，没选择的话return
+    if (choosedPicVal=='1') {
+        alert('请选择');
+        return;
+    }else{
+        hideMbFace(); // 隐藏模板照片、表情照片选择界面
+    }
+
+}
+
+// 点击背景素材、表情素材选择界面确定按钮
+$('#sc-mb-confirm').on('touchstart', confirmChooseBgOrFacePic);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 (function($) {
