@@ -91,6 +91,27 @@ function setBgImages() {
     $('#sc-mb-container').css('background-image', 'url(images/sc-mb-bg.png)');
     $('.close-btn').css('background-image', 'url(images/close-btn.png)');
 
+    // 表情、文案
+    $('#mb-text').css('background-image', 'url(images/mb-text-bg.png)');
+    $('#reselect').css('background-image', 'url(images/reselect.png)');
+    $('.confirms').css('background-image', 'url(images/confirms.png)');
+    $('#choose-text-type').css('background-image', 'url(images/choose.png)');
+    $('#mb-text-btn').css('background-image', 'url(images/mb-text-btn.png)');
+    $('#sc-mb-container').css('background-image', 'url(images/sc-mb-bg.png)');
+    $('#personal-text-btn').css('background-image', 'url(images/personal-text-btn.png)');
+    $('#adjust-guide').css('background-image', 'url(images/adjust-guide.png)');
+    $('#template-text').css('background-image', 'url(images/text-bg.png)');
+    $('.checked-circle').css('background-image', 'url(images/checked-circle.png)');
+    $('.swiper-button-prev').css('background-image', 'url(images/left-arrow.png)');
+    $('.swiper-button-next').css('background-image', 'url(images/right-arrow.png)');
+
+
+    //生成页
+    $('#save-reminder').css('background-image', 'url(images/save-reminder.png)');
+    $('#change-btn').css('background-image', 'url(images/change-btn.png)');
+    $('#tieba-logo').css('background-image', 'url(images/logo.png)');
+
+
 
 
 }

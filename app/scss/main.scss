@@ -408,21 +408,21 @@ body {
     $mb-text: '../images/mb-text-bg.png';
     width: image-width($mb-text);
     height: image-height($mb-text);
-    background-image: url($mb-text);
+    // background-image: url($mb-text);
 }
 
 #reselect {
     $reselect: '../images/reselect.png';
     width: image-width($reselect);
     height: image-height($reselect);
-    background-image: url($reselect);
+    // background-image: url($reselect);
 }
 
 .confirms {
     $confirms: '../images/confirms.png';
     width: image-width($confirms);
     height: image-height($confirms);
-    background-image: url($confirms);
+    // background-image: url($confirms);
 }
 
 #mb-text-confrim {
@@ -441,7 +441,7 @@ body {
     $choose: '../images/choose.png';
     width: image-width($choose);
     height: image-height($choose);
-    background-image: url($choose);
+    // background-image: url($choose);
 }
 
 #mb-text-btn {
@@ -450,7 +450,7 @@ body {
     $mb-text-btn: '../images/mb-text-btn.png';
     width: image-width($mb-text-btn);
     height: image-height($mb-text-btn);
-    background-image: url($mb-text-btn);
+    // background-image: url($mb-text-btn);
 }
 
 #personal-text-btn {
@@ -459,7 +459,7 @@ body {
     $personal-text-btn: '../images/personal-text-btn.png';
     width: image-width($personal-text-btn);
     height: image-height($personal-text-btn);
-    background-image: url($personal-text-btn);
+    // background-image: url($personal-text-btn);
 }
 
 #adjust-guide {
@@ -468,7 +468,7 @@ body {
     $adjust-guide: '../images/adjust-guide.png';
     width: image-width($adjust-guide);
     height: image-height($adjust-guide);
-    background-image: url($adjust-guide);
+    // background-image: url($adjust-guide);
 }
 
 #save-reminder {
@@ -477,7 +477,7 @@ body {
     $save-reminder: '../images/save-reminder.png';
     width: image-width($save-reminder);
     height: image-height($save-reminder);
-    background-image: url($save-reminder);
+    // background-image: url($save-reminder);
 }
 
 #change-btn {
@@ -486,7 +486,7 @@ body {
     $change-btn: '../images/change-btn.png';
     width: image-width($change-btn);
     height: image-height($change-btn);
-    background-image: url($change-btn);
+    // background-image: url($change-btn);
 }
 
 #tieba-logo {
@@ -495,7 +495,7 @@ body {
     $logo: '../images/logo.png';
     width: image-width($logo);
     height: image-height($logo);
-    background-image: url($logo);
+    // background-image: url($logo);
 }
 
 #mb-text-tabs {
@@ -557,7 +557,7 @@ body {
     $template-text: '../images/text-bg.png';
     width: image-width($template-text);
     height: image-height($template-text);
-    background-image: url($template-text);
+    // background-image: url($template-text);
 }
 
 ul {
@@ -648,7 +648,7 @@ ul {
     $checked: '../images/checked.png';
     width: image-width($checked);
     height: image-height($checked);
-    background-image: url($checked);
+    // background-image: url($checked);
 }
 
 #template-pics {
@@ -695,7 +695,7 @@ ul {
     margin: {
         top: -(image-height($left-arrow)/2);
     }
-    background-image: url($left-arrow);
+    // background-image: url($left-arrow);
     @include background-size(image-width($left-arrow) image-height($left-arrow));
 }
 
@@ -706,7 +706,7 @@ ul {
     margin: {
         top: -(image-height($right-arrow)/2);
     }
-    background-image: url($right-arrow);
+    // background-image: url($right-arrow);
     @include background-size(image-width($right-arrow) image-height($right-arrow));
 }
 

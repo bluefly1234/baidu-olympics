@@ -598,19 +598,16 @@ body {
   left: 44px;
   width: 561px;
   height: 297px;
-  background-image: url("../images/mb-text-bg.png");
 }
 
 #reselect {
   width: 244px;
   height: 75px;
-  background-image: url("../images/reselect.png");
 }
 
 .confirms {
   width: 244px;
   height: 75px;
-  background-image: url("../images/confirms.png");
 }
 
 #mb-text-confrim {
@@ -628,7 +625,6 @@ body {
   left: 57px;
   width: 526px;
   height: 331px;
-  background-image: url("../images/choose.png");
 }
 
 #mb-text-btn {
@@ -636,7 +632,6 @@ body {
   left: 121px;
   width: 284px;
   height: 75px;
-  background-image: url("../images/mb-text-btn.png");
 }
 
 #personal-text-btn {
@@ -644,7 +639,6 @@ body {
   left: 121px;
   width: 284px;
   height: 75px;
-  background-image: url("../images/personal-text-btn.png");
 }
 
 #adjust-guide {
@@ -652,7 +646,6 @@ body {
   left: 142px;
   width: 196px;
   height: 153px;
-  background-image: url("../images/adjust-guide.png");
 }
 
 #save-reminder {
@@ -660,7 +653,6 @@ body {
   left: 115px;
   width: 410px;
   height: 40px;
-  background-image: url("../images/save-reminder.png");
 }
 
 #change-btn {
@@ -668,7 +660,6 @@ body {
   left: 198px;
   width: 244px;
   height: 75px;
-  background-image: url("../images/change-btn.png");
 }
 
 #tieba-logo {
@@ -676,7 +667,6 @@ body {
   left: 233px;
   width: 175px;
   height: 58px;
-  background-image: url("../images/logo.png");
 }
 
 #mb-text-tabs {
@@ -732,7 +722,6 @@ body {
   left: 47px;
   width: 467px;
   height: 173px;
-  background-image: url("../images/text-bg.png");
 }
 
 ul {
@@ -802,7 +791,6 @@ ul {
   cursor: pointer;
   width: 34px;
   height: 34px;
-  background-image: url("../images/checked.png");
 }
 
 #template-pics {
@@ -843,7 +831,6 @@ ul {
   width: 37px;
   height: 87px;
   margin-top: -43.5px;
-  background-image: url("../images/left-arrow.png");
   -moz-background-size: 37px 87px;
   -o-background-size: 37px 87px;
   -webkit-background-size: 37px 87px;
@@ -854,7 +841,6 @@ ul {
   width: 37px;
   height: 87px;
   margin-top: -43.5px;
-  background-image: url("../images/right-arrow.png");
   -moz-background-size: 37px 87px;
   -o-background-size: 37px 87px;
   -webkit-background-size: 37px 87px;
