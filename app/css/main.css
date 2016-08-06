@@ -379,12 +379,22 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+#loading-num {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  font-size: 42px;
+  font-weight: 100;
+  text-align: center;
+  color: #fff;
+  z-index: 100;
+}
+
 #ribao {
   top: 30px;
   left: 40px;
   width: 575px;
   height: 268px;
-  background-image: url("../images/ribao.png");
 }
 
 #tap-me-container {
@@ -399,7 +409,6 @@ body {
   left: 59px;
   width: 105px;
   height: 39px;
-  background-image: url("../images/tap-me.png");
 }
 
 #left-hand {
@@ -407,7 +416,6 @@ body {
   left: 0;
   width: 65px;
   height: 38px;
-  background-image: url("../images/left-hand.png");
 }
 
 #right-hand {
@@ -415,7 +423,6 @@ body {
   right: 0;
   width: 65px;
   height: 38px;
-  background-image: url("../images/right-hand.png");
 }
 
 #cover-bottom {
@@ -423,7 +430,6 @@ body {
   left: 0;
   width: 640px;
   height: 526px;
-  background-image: url("../images/cover-bottom.png");
 }
 
 #theme {
@@ -431,7 +437,6 @@ body {
   left: 51px;
   width: 571px;
   height: 341px;
-  background-image: url("../images/theme.png");
 }
 
 #go-dz {
@@ -439,7 +444,6 @@ body {
   left: 180px;
   width: 284px;
   height: 75px;
-  background-image: url("../images/go-dz.png");
 }
 
 #go-dz-des {
@@ -447,7 +451,6 @@ body {
   left: 180px;
   width: 281px;
   height: 70px;
-  background-image: url("../images/go-dz-des.png");
 }
 
 #common-title {
@@ -862,7 +865,7 @@ ul {
   border: 3px solid #c50000;
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template1, #common-page1, #template-text {
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page, #template-text, #template-pics {
   display: none;
 }
 

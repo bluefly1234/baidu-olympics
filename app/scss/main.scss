@@ -150,6 +150,21 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
+#loading-num {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    font: {
+        size: 42px;
+        weight: 100;
+    }
+    text: {
+        align: center;
+    }
+    color: #fff;
+    z-index: 100;
+}
+
 // cover start=======================
 #ribao {
     top: 30px;
@@ -157,7 +172,7 @@ body {
     $ribao: '../images/ribao.png';
     width: image-width($ribao);
     height: image-height($ribao);
-    background-image: url($ribao);
+    // background-image: url($ribao);
 }
 
 #tap-me-container {
@@ -173,7 +188,7 @@ body {
     $tap-me: '../images/tap-me.png';
     width: image-width($tap-me);
     height: image-height($tap-me);
-    background-image: url($tap-me);
+    // background-image: url($tap-me);
 }
 
 #left-hand {
@@ -182,7 +197,7 @@ body {
     $left-hand: '../images/left-hand.png';
     width: image-width($left-hand);
     height: image-height($left-hand);
-    background-image: url($left-hand);
+    // background-image: url($left-hand);
 }
 
 #right-hand {
@@ -191,7 +206,7 @@ body {
     $right-hand: '../images/right-hand.png';
     width: image-width($right-hand);
     height: image-height($right-hand);
-    background-image: url($right-hand);
+    // background-image: url($right-hand);
 }
 
 #cover-bottom {
@@ -200,7 +215,7 @@ body {
     $cover-bottom: '../images/cover-bottom.png';
     width: image-width($cover-bottom);
     height: image-height($cover-bottom);
-    background-image: url($cover-bottom);
+    // background-image: url($cover-bottom);
 }
 
 #theme {
@@ -209,7 +224,7 @@ body {
     $theme: '../images/theme.png';
     width: image-width($theme);
     height: image-height($theme);
-    background-image: url($theme);
+    // background-image: url($theme);
 }
 
 #go-dz {
@@ -218,7 +233,7 @@ body {
     $go-dz: '../images/go-dz.png';
     width: image-width($go-dz);
     height: image-height($go-dz);
-    background-image: url($go-dz);
+    // background-image: url($go-dz);
 }
 
 #go-dz-des {
@@ -227,7 +242,7 @@ body {
     $go-dz-des: '../images/go-dz-des.png';
     width: image-width($go-dz-des);
     height: image-height($go-dz-des);
-    background-image: url($go-dz-des);
+    // background-image: url($go-dz-des);
 }
 
 // upload start==========================================================
@@ -690,6 +705,6 @@ ul {
 
 
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template1, #common-page1, #template-text {
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page, #template-text, #template-pics {
     display: none;
 }
