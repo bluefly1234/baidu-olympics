@@ -802,7 +802,67 @@ ul {
   background-image: url("../images/checked.png");
 }
 
-#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template, #common-page {
+#template-pics {
+  width: 100%;
+  height: 140px;
+  margin-top: 120px;
+  padding: 0 60px;
+  white-space: nowrap;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 28px;
+  background: #fff;
+  border: 3px solid #9c6000;
+  color: #9c6000;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-button-prev {
+  width: 37px;
+  height: 87px;
+  margin-top: -43.5px;
+  background-image: url("../images/left-arrow.png");
+  -moz-background-size: 37px 87px;
+  -o-background-size: 37px 87px;
+  -webkit-background-size: 37px 87px;
+  background-size: 37px 87px;
+}
+
+.swiper-button-next {
+  width: 37px;
+  height: 87px;
+  margin-top: -43.5px;
+  background-image: url("../images/right-arrow.png");
+  -moz-background-size: 37px 87px;
+  -o-background-size: 37px 87px;
+  -webkit-background-size: 37px 87px;
+  background-size: 37px 87px;
+}
+
+.pic-type-active {
+  border: 3px solid #c50000;
+}
+
+#cover, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #personal-input, #template1, #common-page1, #template-text {
   display: none;
 }
 

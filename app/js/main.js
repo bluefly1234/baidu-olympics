@@ -9,6 +9,16 @@
     });  //Document ready
 })(jQuery);
 
+var swiper = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 3,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    paginationClickable: true,
+    spaceBetween: 10,
+    loop: true
+});
+
 // 文字列表radio样式功能，获取祝福内容 start
 var radioBoxElements = Array.prototype.slice.call( document.querySelectorAll( '#text-lists input[type="radio"]' ) );
 var textContent = '';
