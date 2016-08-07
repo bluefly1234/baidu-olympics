@@ -30,6 +30,12 @@ var sourceArr = [
     'images/mb-text-bg.png',
     'images/mb-text-btn.png',
     'images/personal-text-btn.png',
+    'images/rb1.png',
+    'images/rb2.png',
+    'images/rb3.png',
+    'images/rb-bottom.png',
+    'images/rb-title.png',
+    'images/rb-today.png',
     'images/ribao.png',
     'images/right-arrow.png',
     'images/right-hand.png',
@@ -75,6 +81,14 @@ function setBgImages() {
     $('#theme').css('background-image', 'url(images/theme.png)');
     $('#go-dz').css('background-image', 'url(images/go-dz.png)');
     $('#go-dz-des').css('background-image', 'url(images/go-dz-des.png)');
+
+    // 设置日报src
+    $('#rb-title').css('background-image', 'url(images/rb-title.png)');
+    $('#rb-bottom').css('background-image', 'url(images/rb-bottom.png)');
+    $('#rb-today-pic').attr('src', 'images/rb-today.png');
+    $('#rb1-pic').attr('src', 'images/rb1.png');
+    $('#rb2-pic').attr('src', 'images/rb2.png');
+    $('#rb3-pic').attr('src', 'images/rb3.png');
 
     // common page
     $('#common-title').css('background-image', 'url(images/common-title.png)');
@@ -175,6 +189,43 @@ function hideCover() {
         .set('#cover', {display: 'none', autoAlpha: 0})
         .set('#theme', {scale: 0})
 }
+
+// 首页去表情日报页
+function goToDailyPage() {
+    // 先判断表情模板是否选择，文字是否选择填写
+    var dailyPageShow = new TimelineMax({
+        onComplete: function () {
+            tapmeAN.pause(0);
+            dzBounce.pause(0);
+        }
+    });
+    dailyPageShow.set('#rb-container', {display: 'block', x: 640, autoAlpha: 1})
+        .to('#cover', 0.8, {x: -640, ease: Power3.easeInOut})
+        .to('#rb-container', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .set('#cover', {display: 'none', autoAlpha: 0})
+}
+
+// 日报页面返回至首页
+function backToCoverPage() {
+    var coverPageBackShow = new TimelineMax({
+        onStart: function () {
+            tapmeAN.play(0);
+            dzBounce.play(0);
+        }
+    });
+    coverPageBackShow.set('#cover', {display: 'block', autoAlpha: 1})
+        .to('#cover', 0.8, {x: 0, ease: Power3.easeInOut})
+        .to('#rb-container', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .set('#rb-container', {display: 'none', autoAlpha: 0})
+}
+
+// 点击戳我按钮
+$('#tap-me-container').on('touchstart', goToDailyPage);
+// 左滑日报页返回首页
+touch.on($("#rb-container"), 'swiperight', function(ev){
+    console.log(ev.type + ' #rb-container');
+    backToCoverPage();
+});
 
 // 显示共用背景元素
 function showCommonPage() {
