@@ -271,6 +271,8 @@ img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 html, body {
@@ -558,7 +560,7 @@ body {
 }
 
 #choose {
-  top: 293px;
+  top: 400px;
   left: 57px;
   width: 526px;
   height: 331px;

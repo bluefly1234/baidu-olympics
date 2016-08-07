@@ -200,8 +200,8 @@ function goToDailyPage() {
         }
     });
     dailyPageShow.set('#rb-container', {display: 'block', x: 640, autoAlpha: 1})
-        .to('#cover', 0.8, {x: -640, ease: Power3.easeInOut})
-        .to('#rb-container', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .to('#cover', 0.4, {x: -640, ease: Power3.easeInOut})
+        .to('#rb-container', 0.4, {x: 0, ease: Power3.easeInOut}, '-=0.4')
         .set('#cover', {display: 'none', autoAlpha: 0})
 }
 
@@ -214,8 +214,8 @@ function backToCoverPage() {
         }
     });
     coverPageBackShow.set('#cover', {display: 'block', autoAlpha: 1})
-        .to('#cover', 0.8, {x: 0, ease: Power3.easeInOut})
-        .to('#rb-container', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .to('#cover', 0.4, {x: 0, ease: Power3.easeInOut})
+        .to('#rb-container', 0.4, {x: 640, ease: Power3.easeInOut}, '-=0.4')
         .set('#rb-container', {display: 'none', autoAlpha: 0})
 }
 
@@ -236,7 +236,7 @@ function showCommonPage() {
     });
     commonPageShow.set('#common-page', {display: 'block', autoAlpha: 1})
         .fromTo('#common-bottom', 0.6, {autoAlpha: 0, y: 640}, {autoAlpha: 1, y: 0})
-        .fromTo('#common-title', 0.8, {autoAlpha: 0, y: -320}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.3')
+        .fromTo('#common-title', 0.6, {autoAlpha: 0, y: -320}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.3')
 }
 
 // 初次显示上传页
@@ -253,8 +253,8 @@ $('#upload-icon').on('touchstart', showPicTypeChoose);
 function showPicTypeChoose() {
     var picTypeChooseShow = new TimelineMax();
     picTypeChooseShow.set('#choose-pic', {display: 'block', autoAlpha: 1})
-        .fromTo('#choose-pic', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo('#choose', 0.6, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.2), force3D: true}, '-=0.2')
+        .fromTo('#choose-pic', 0.3, {autoAlpha: 0}, {autoAlpha: 1})
+        .fromTo('#choose', 0.5, {autoAlpha: 0, scale: 0}, {autoAlpha: 1, scale: 1, ease: Back.easeOut.config(1.2), force3D: true}, '-=0.2')
 }
 
 // 隐藏上传页照片类型弹窗
@@ -262,8 +262,8 @@ function hidePicTypeChoose() {
     var picTypeChooseHide = new TimelineMax({
         onComplete: uploadChooseTypeResult
     });
-    picTypeChooseHide.to('#choose', 0.6, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.2), force3D: true})
-        .to('#choose-pic', 0.4, {autoAlpha: 0}, '-=0.1')
+    picTypeChooseHide.to('#choose', 0.4, {autoAlpha: 0, scale: 0, ease: Back.easeIn.config(1.2), force3D: true})
+        .to('#choose-pic', 0.2, {autoAlpha: 0}, '-=0.1')
         .set('#choose-pic', {display: 'none'})
 }
 
@@ -299,7 +299,7 @@ function showMbFace() {
     var mbFaceShow = new TimelineMax();
     mbFaceShow.set('#sc-mb', {display: 'block'})
         .fromTo('#sc-mb', 0.4, {autoAlpha: 0}, {autoAlpha: 1})
-        .fromTo('#sc-mb-container', 0.8, {autoAlpha: 0, y: -1000}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)})
+        .fromTo('#sc-mb-container', 0.6, {autoAlpha: 0, y: -1000}, {autoAlpha: 1, y: 0, ease: Back.easeOut.config(1.2)}, '-=0.1')
 }
 
 // 隐藏模板照片、表情照片选择界面
@@ -353,8 +353,8 @@ function goToTemplatePage() {
         }
     });
     templatePageShow.set('#template', {display: 'block', x: 640, autoAlpha: 1})
-        .to('#upload-page', 0.8, {x: -640, ease: Power3.easeInOut})
-        .to('#template', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .to('#upload-page', 0.4, {x: -640, ease: Power3.easeInOut})
+        .to('#template', 0.4, {x: 0, ease: Power3.easeInOut}, '-=0.4')
         .set('#upload-page', {display: 'none', autoAlpha: 0})
 }
 
@@ -362,8 +362,8 @@ function goToTemplatePage() {
 function backToUploadPage() {
     var uploadPageBackShow = new TimelineMax();
     uploadPageBackShow.set('#upload-page', {display: 'block', autoAlpha: 1})
-        .to('#upload-page', 0.8, {x: 0, ease: Power3.easeInOut})
-        .to('#template', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .to('#upload-page', 0.4, {x: 0, ease: Power3.easeInOut})
+        .to('#template', 0.4, {x: 640, ease: Power3.easeInOut}, '-=0.4')
         .set('#template', {display: 'none', autoAlpha: 0})
 }
 
@@ -476,8 +476,8 @@ function goToGeneratedPage() {
     // 先判断表情模板是否选择，文字是否选择填写
     var generatedPageShow = new TimelineMax();
     generatedPageShow.set('#generated-page', {display: 'block', x: 640, autoAlpha: 1})
-        .to('#template', 0.8, {x: -640, ease: Power3.easeInOut})
-        .to('#generated-page', 0.8, {x: 0, ease: Power3.easeInOut}, '-=0.8')
+        .to('#template', 0.4, {x: -640, ease: Power3.easeInOut})
+        .to('#generated-page', 0.4, {x: 0, ease: Power3.easeInOut}, '-=0.4')
         .set('#template', {display: 'none', autoAlpha: 0})
 }
 
@@ -485,8 +485,8 @@ function goToGeneratedPage() {
 function backToTemplatePage() {
     var templatePageBackShow = new TimelineMax();
     templatePageBackShow.set('#template', {display: 'block', autoAlpha: 1})
-        .to('#template', 0.8, {x: 0, ease: Power3.easeInOut})
-        .to('#generated-page', 0.8, {x: 640, ease: Power3.easeInOut}, '-=0.8')
+        .to('#template', 0.4, {x: 0, ease: Power3.easeInOut})
+        .to('#generated-page', 0.4, {x: 640, ease: Power3.easeInOut}, '-=0.4')
         .set('#generated-page', {display: 'none', autoAlpha: 0})
 }
 

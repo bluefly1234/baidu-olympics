@@ -47,8 +47,8 @@ img {
  *:after,
  *:before {
     @include box-sizing(border-box);
-    // -webkit-user-select:none;
-    // -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -webkit-touch-callout:none;
  }
 
 html, body {
@@ -372,7 +372,7 @@ body {
 }
 
 #choose {
-    top: 293px;
+    top: 400px;
     left: 57px;
     $choose: '../images/choose.png';
     width: image-width($choose);
