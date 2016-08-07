@@ -336,11 +336,21 @@ function confirmChooseBgOrFacePic() {
 // 点击背景素材、表情素材选择界面确定按钮
 $('#sc-mb-confirm').on('touchstart', confirmChooseBgOrFacePic);
 
+// 素材库列表添加点选效果
+$('.sc-mb-item').on('touchstart', function () {
+    console.log($(this));
+    $('.sc-mb-item').find('.item-checked').remove();
+    $(this).append('<div class="item-checked"></div>');
+});
+
 // 上传页切换至模板页面
 function goToTemplatePage() {
     // 先判断是否上传了照片，没上传需alert并return
     var templatePageShow = new TimelineMax({
-        onStart: initSwiper
+        onStart: initSwiper,
+        onComplete: function () {
+            hideAdjustGuide();
+        }
     });
     templatePageShow.set('#template', {display: 'block', x: 640, autoAlpha: 1})
         .to('#upload-page', 0.8, {x: -640, ease: Power3.easeInOut})
@@ -362,6 +372,15 @@ $('#upload-confirm').on('touchstart', goToTemplatePage);
 
 // 表情图文页
 $('#reselect').on('touchstart', backToUploadPage);
+
+// 隐藏手指指示
+function hideAdjustGuide() {
+    var adjustGuideHide = new TimelineMax({
+        delay: 1
+    });
+    adjustGuideHide.to('#adjust-guide', 0.6, {autoAlpha: 0})
+        .set('#adjust-guide', {display: 'none'});
+}
 
 // 模板页表情模板、配文按钮切换
 function changeMbTextTabs() {

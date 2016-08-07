@@ -605,6 +605,15 @@ body {
   border: 3px solid #9c6000;
 }
 
+.item-checked {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 34px;
+  height: 34px;
+  background-image: url("../images/item-checked.png");
+}
+
 .sc-mb-pic {
   display: block;
   position: absolute;
@@ -631,7 +640,7 @@ body {
   overflow: hidden;
 }
 
-#generating-pic {
+#generating-pic, #choosed-face {
   display: block;
   position: absolute;
   top: 0;
