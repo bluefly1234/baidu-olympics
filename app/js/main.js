@@ -64,8 +64,8 @@ new mo.Loader(sourceArr,{
                 showCover();
             }
         });
-        hideLoading.to(['#loading-num'], 0.6, {autoAlpha: 0})
-        .set(['#loading-num'], {display: 'none'})
+        hideLoading.to(['#loading-num', '#loading-logo'], 0.6, {autoAlpha: 0})
+        .set(['#loading-num', '#loading-logo'], {display: 'none'});
 	}
 });
 

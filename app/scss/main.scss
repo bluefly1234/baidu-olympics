@@ -152,7 +152,7 @@ body {
 
 #loading-num {
     position: absolute;
-    top: 50%;
+    top: 60%;
     width: 100%;
     font: {
         size: 42px;
@@ -162,6 +162,17 @@ body {
         align: center;
     }
     color: #fff;
+    z-index: 100;
+}
+
+#loading-logo {
+    top: 40%;
+    left: 50%;
+    $logo: '../images/logo.png';
+    width: image-width($logo);
+    height: image-height($logo);
+    background-image: url($logo);
+    @include transform(translate3d(-50%, 0, 0));
     z-index: 100;
 }
 

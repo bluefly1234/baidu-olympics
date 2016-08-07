@@ -381,12 +381,25 @@ body {
 
 #loading-num {
   position: absolute;
-  top: 50%;
+  top: 60%;
   width: 100%;
   font-size: 42px;
   font-weight: 100;
   text-align: center;
   color: #fff;
+  z-index: 100;
+}
+
+#loading-logo {
+  top: 40%;
+  left: 50%;
+  width: 175px;
+  height: 58px;
+  background-image: url("../images/logo.png");
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  -webkit-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
   z-index: 100;
 }
 
