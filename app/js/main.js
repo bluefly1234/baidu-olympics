@@ -30,9 +30,8 @@ var sourceArr = [
     'images/mb-text-bg.png',
     'images/mb-text-btn.png',
     'images/personal-text-btn.png',
-    'images/rb1.png',
-    'images/rb2.png',
-    'images/rb3.png',
+    'images/daily/0806.png',
+    'images/daily/0807.png',
     'images/rb-bottom.png',
     'images/rb-title.png',
     'images/rb-today.png',
@@ -86,9 +85,8 @@ function setBgImages() {
     $('#rb-title').css('background-image', 'url(images/rb-title.png)');
     $('#rb-bottom').css('background-image', 'url(images/rb-bottom.png)');
     $('#rb-today-pic').attr('src', 'images/rb-today.png');
-    $('#rb1-pic').attr('src', 'images/rb1.png');
-    $('#rb2-pic').attr('src', 'images/rb2.png');
-    $('#rb3-pic').attr('src', 'images/rb3.png');
+    $('#rb0806-pic').attr('src', 'images/daily/0806.png');
+    $('#rb0807-pic').attr('src', 'images/daily/0807.png');
 
     // common page
     $('#common-title').css('background-image', 'url(images/common-title.png)');
