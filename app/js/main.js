@@ -38,6 +38,7 @@ var sourceArr = [
     'images/ribao.png',
     'images/right-arrow.png',
     'images/right-hand.png',
+    'images/sample.jpg',
     'images/save-reminder.png',
     'images/sc-mb-bg.png',
     'images/tap-me.png',
@@ -95,6 +96,7 @@ function setBgImages() {
     // upload page
     $('#upload-icon').css('background-image', 'url(images/upload-icon.png)');
     $('#upload-confirm').css('background-image', 'url(images/confirm.png)');
+    $('#sample').css('background-image', 'url(images/sample.jpg)');
 
     // 模板选择弹窗
     $('.confirm-blue').css('background-image', 'url(images/confirm-blue.png)');
@@ -239,9 +241,35 @@ function showCommonPage() {
 
 // 初次显示上传页
 function showUploadPage() {
-    var uploadPageShow = new TimelineMax();
+    var uploadPageShow = new TimelineMax({
+        onComplete: function () {
+            sampleScale.play(0); // 播放sample缩放动画
+        }
+    });
     uploadPageShow.set('#upload-page', {display: 'block', autoAlpha: 1, perspective: 500})
     .staggerFromTo(['#upload-container', '#upload-confirm'], 0.6, {autoAlpha: 0, z: -300}, {autoAlpha: 1, z: 0, ease: Back.easeOut.config(1.2)}, 0.12)
+}
+
+// sample缩放动画
+var sampleScale = new TimelineMax({
+    paused: true,
+    repeat: -1,
+    yoyo: true
+});
+sampleScale.to('#sample', 0.6, {scale: 1.1, ease: Power2.easeInOut, force3D: true});
+
+// 暂停sample缩放动画并隐藏
+// TODO
+function stopSampleScale() {
+    var hideSamle = new TimelineMax({
+        onComplete: {
+            function () {
+                sampleScale.pause(0);
+            }
+        }
+    });
+    hideSamle.to('#sample', 0.5, {autoAlpha: 0})
+            .set('#sample', {display: 'none'});
 }
 
 // 点击上传加号调用显示选择照片类型弹窗

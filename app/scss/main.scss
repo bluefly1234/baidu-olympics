@@ -327,6 +327,18 @@ body {
     overflow: hidden;
 }
 
+#sample {
+    top: 50%;
+    left: 0;
+    $sample: '../images/sample.jpg';
+    width: image-width($sample);
+    height: image-height($sample);
+    // background-image: url($sample);
+    margin: {
+        top: -(image-height($sample)/2);
+    }
+}
+
 
 #upload-icon {
     $upload-icon: '../images/upload-icon.png';
