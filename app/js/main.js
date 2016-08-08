@@ -339,6 +339,7 @@ $('#close-sc-mb').on('touchstart', hideMbFace);
 
 // 设置缩略图， 根据类型初始化选择显示的缩略图
 function setMbPics() {
+     $('.sc-mb-item').find('.item-checked').remove(); // 清除对勾
     if (scType=='scBg') {
         // 设置照片背景素材库缩略图
         console.log('要设置背景缩略图');
