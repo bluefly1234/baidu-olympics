@@ -261,14 +261,12 @@ sampleScale.to('#sample', 0.6, {scale: 1.1, ease: Power2.easeInOut, force3D: tru
 // 暂停sample缩放动画并隐藏
 // TODO
 function stopSampleScale() {
-    var hideSamle = new TimelineMax({
-        onComplete: {
-            function () {
-                sampleScale.pause(0);
-            }
+    var hideSample = new TimelineMax({
+        onComplete:function () {
+            sampleScale.pause(0);
         }
     });
-    hideSamle.to('#sample', 0.5, {autoAlpha: 0})
+    hideSample.to('#sample', 0.5, {autoAlpha: 0})
             .set('#sample', {display: 'none'});
 }
 
