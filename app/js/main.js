@@ -85,9 +85,10 @@ function setBgImages() {
     // 设置日报src
     $('#rb-title').css('background-image', 'url(images/rb-title.png)');
     $('#rb-bottom').css('background-image', 'url(images/rb-bottom.png)');
-    $('#rb-today-pic').attr('src', 'images/rb-today.png');
+    $('#rb-today-pic').attr('src', 'images/daily/rb-today.png');
     $('#rb0806-pic').attr('src', 'images/daily/0806.png');
     $('#rb0807-pic').attr('src', 'images/daily/0807.png');
+    $('#rb0808-pic').attr('src', 'images/daily/0808.png');
 
     // common page
     $('#common-title').css('background-image', 'url(images/common-title.png)');
