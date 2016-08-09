@@ -54,6 +54,7 @@ var sourceArr = [
     'images/right-arrow.png',
     'images/right-hand.png',
     'images/sample.jpg',
+    'images/save-alert.png',
     'images/save-reminder.png',
     'images/sc-mb-bg.png',
     'images/tap-me.png',
@@ -77,6 +78,8 @@ new mo.Loader(sourceArr,{
             delay: 2,
             onComplete: function () {
                 showCover();
+                TweenMax.set('#music-control', {autoAlpha: 1});
+                bgAud.play(); // 播放背景音乐
             }
         });
         hideLoading.to(['#loading-num', '#loading-logo'], 0.6, {autoAlpha: 0})
@@ -87,6 +90,11 @@ new mo.Loader(sourceArr,{
 
 // 设置背景图片
 function setBgImages() {
+    // music
+    $('#bg-music').attr('src', 'media/bgmusic.mp3');
+    $('#music-control-main').css('background-image', 'url(images/music-bg.png)');
+    $('.music-control-icon').css('background-image', 'url(images/music-icon.png)');
+
     // cover
     $('#ribao').css('background-image', 'url(images/ribao.png)');
     $('#tap-me').css('background-image', 'url(images/tap-me.png)');
@@ -142,8 +150,53 @@ function setBgImages() {
     $('#save-reminder').css('background-image', 'url(images/save-reminder.png)');
     $('#change-btn').css('background-image', 'url(images/change-btn.png)');
     $('#tieba-logo').css('background-image', 'url(images/logo.png)');
+    $('#save-alert').css('background-image', 'url(images/save-alert.png)');
 
 }
+
+// music-control--------------
+var musicCtrl = new TimelineMax({repeat: -1, paused:true });
+var musicRotation = new TimelineMax({repeat: -1, paused:true});
+musicCtrl.to($(".music-control-icon"), 2, {rotation: 360, ease: Power0.easeNone});
+musicRotation.to($(".music-control-icon:nth(1)"), 0.5, {x: "-=20",y: "-=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(2)"), 0.5, {x: "+=20", y: "-=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(3)"), 0.5, {x: "-=20", y: "+=20", autoAlpha:0, ease: Power0.easeNone})
+              .to($(".music-control-icon:nth(4)"), 0.5, {x: "+=20", y: "+=20", autoAlpha:0, ease: Power0.easeNone})
+// 音乐初始化
+var bgAud = $("#bg-music")[0];
+console.log(bgAud);
+function initAud(){
+    if (bgAud.currentTime){
+        console.log("背景音乐开始播放");
+        musicCtrl.play();
+        musicRotation.play();
+        bgAud.removeEventListener("timeupdate", initAud, false); //只执行一次，防止控制按钮动画无法暂停
+    }
+}
+
+bgAud.addEventListener("timeupdate", initAud, false);
+
+function playBM() {
+    bgAud.play();
+    musicCtrl.play();
+    musicRotation.play();
+}
+
+function pauseBM() {
+    bgAud.pause();
+    musicCtrl.pause();
+    musicRotation.pause();
+}
+
+// 音乐控制
+$("#music-control").on('touchstart', function(){
+    if(bgAud.paused){
+        playBM();
+    }else{
+        pauseBM();
+    }
+});
+// music-control End------------------------------
 
 // 首页动画功能
 function showCover() {
@@ -532,11 +585,23 @@ $('.template-pic-type').on('touchstart', selectBqType);
 // 模板页面切换至最终页
 function goToGeneratedPage() {
     // 先判断表情模板是否选择，文字是否选择填写
-    var generatedPageShow = new TimelineMax();
+    var generatedPageShow = new TimelineMax({
+        onComplete: hideSaveGuide
+    });
     generatedPageShow.set('#generated-page', {display: 'block', x: 640, autoAlpha: 1})
         .to('#template', 0.4, {x: -640, ease: Power3.easeInOut})
         .to('#generated-page', 0.4, {x: 0, ease: Power3.easeInOut}, '-=0.4')
         .set('#template', {display: 'none', autoAlpha: 0})
+}
+
+// 隐藏保存指示
+function hideSaveGuide() {
+    var saveGuideHide = new TimelineMax({
+        delay: 1
+    });
+    saveGuideHide.to('#save-alert', 0.6, {autoAlpha: 0.5, repeat: 3, yoyo: true})
+        .to('#save-alert', 0.6, {autoAlpha: 0})
+        .set('#save-alert', {display: 'none'});
 }
 
 // 最终页返回至模板页

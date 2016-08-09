@@ -405,6 +405,33 @@ body {
   z-index: 100;
 }
 
+#music-control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58px;
+  height: 58px;
+  margin: 24px;
+}
+
+#music-control-main {
+  position: absolute;
+  width: 58px;
+  height: 58px;
+}
+
+.music-control-icon {
+  position: absolute;
+  width: 19px;
+  height: 31px;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+}
+
 #ribao {
   top: 30px;
   left: 40px;
@@ -667,7 +694,7 @@ body {
   top: 0;
   left: 0;
   width: 480px;
-  height: 288px;
+  height: 370px;
   overflow: hidden;
 }
 
@@ -688,6 +715,7 @@ body {
   font-weight: 600;
   text-align: center;
   line-height: 82px;
+  color: #fff;
 }
 
 #display-text-pic {
@@ -968,11 +996,25 @@ ul {
   max-width: 100%;
 }
 
+#save-alert {
+  top: 168px;
+  left: 106px;
+  width: 275px;
+  height: 40px;
+}
+
+#change-btn1 {
+  top: 725px;
+  left: 198px;
+  width: 244px;
+  height: 75px;
+}
+
 #cover, #rb-container, #choose-pic, #sc-mb, #upload-page, #choose-text-type-container, #generated-page, #template, #common-page {
   display: none;
 }
 
-#template-pics, #personal-input {
+#template-pics, #personal-input, #music-control {
   visibility: hidden;
 }
 
