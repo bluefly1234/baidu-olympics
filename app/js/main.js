@@ -11,6 +11,16 @@ $('body').bind('touchmove', function (e) {
     e.preventDefault();
 }); // 禁止页面滚动
 
+function enableBodyMove() {
+    $('body').unbind('touchmove');
+}
+
+function disableBodyMove() {
+    $('body').bind('touchmove', function (e) {
+        e.preventDefault();
+    }); // 禁止页面滚动
+}
+
 // 预加载
 var sourceArr = [
     'images/adjust-guide.png',
@@ -199,6 +209,7 @@ function hideCover() {
 function goToDailyPage() {
     // 先判断表情模板是否选择，文字是否选择填写
     var dailyPageShow = new TimelineMax({
+        onStart: enableBodyMove,
         onComplete: function () {
             tapmeAN.pause(0);
             dzBounce.pause(0);
@@ -214,6 +225,7 @@ function goToDailyPage() {
 function backToCoverPage() {
     var coverPageBackShow = new TimelineMax({
         onStart: function () {
+            disableBodyMove();
             tapmeAN.play(0);
             dzBounce.play(0);
         }
@@ -413,9 +425,19 @@ function hideAdjustGuide() {
 }
 
 Draggable.create("#text-lists", {type:"scrollTop",
-   edgeResistance:0.1,
+   // edgeResistance:0.1,
    throwProps:true,
 });
+
+Draggable.create("#sc-mb-items", {type:"scrollTop",
+   // edgeResistance:0.1,
+   throwProps:true,
+});
+
+// Draggable.create("#ribao-container", {type:"scrollTop",
+//    // edgeResistance:0.1,
+//    throwProps:true,
+// });
 
 // 模板页表情模板、配文按钮切换
 function changeMbTextTabs() {
