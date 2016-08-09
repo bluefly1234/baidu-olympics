@@ -24,6 +24,7 @@ function disableBodyMove() {
 // 预加载
 var sourceArr = [
     'images/adjust-guide.png',
+    'images/back.png',
     'images/change-btn.png',
     'images/checked.png',
     'images/choose.png',
@@ -97,6 +98,7 @@ function setBgImages() {
     $('#go-dz-des').css('background-image', 'url(images/go-dz-des.png)');
 
     // 设置日报src
+    $('#back-home').css('background-image', 'url(images/back.png)');
     $('#rb-title').css('background-image', 'url(images/rb-title.png)');
     $('#rb-bottom').css('background-image', 'url(images/rb-bottom.png)');
     $('#rb-today-pic').attr('src', 'images/daily/rb-today.png');
@@ -243,6 +245,7 @@ touch.on($("#rb-container"), 'swiperight', function(ev){
     console.log(ev.type + ' #rb-container');
     backToCoverPage();
 });
+$('#back-home').on('touchstart', backToCoverPage);
 
 // 显示共用背景元素
 function showCommonPage() {
@@ -434,10 +437,6 @@ Draggable.create("#sc-mb-items", {type:"scrollTop",
    throwProps:true,
 });
 
-// Draggable.create("#ribao-container", {type:"scrollTop",
-//    // edgeResistance:0.1,
-//    throwProps:true,
-// });
 
 // 模板页表情模板、配文按钮切换
 function changeMbTextTabs() {

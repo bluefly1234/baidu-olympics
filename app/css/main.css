@@ -468,6 +468,14 @@ body {
   height: 70px;
 }
 
+#back-home {
+  top: 20px;
+  left: 20px;
+  width: 165px;
+  height: 75px;
+  background-image: url("../images/back.png");
+}
+
 #rb-bottom {
   bottom: 0;
   left: 0;
@@ -477,7 +485,7 @@ body {
 
 #rb-title {
   position: relative;
-  margin-top: 17px;
+  margin-top: 67px;
   margin-left: 27px;
   width: 607px;
   height: 275px;

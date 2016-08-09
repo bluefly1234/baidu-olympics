@@ -257,6 +257,14 @@ body {
 }
 
 // ribao start================================================
+#back-home {
+    top: 20px;
+    left: 20px;
+    $back: '../images/back.png';
+    width: image-width($back);
+    height: image-height($back);
+    background-image: url($back);
+}
 #rb-bottom {
     bottom: 0;
     left: 0;
@@ -269,7 +277,7 @@ body {
 #rb-title {
     position: relative;
     margin: {
-        top: 17px;
+        top: 67px;
         left: 27px;
     }
     $rb-title: '../images/rb-title.png';
