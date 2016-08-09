@@ -7,6 +7,10 @@ var chooseTextType = ''; // 添加选择文本类型
 var scType = ''; // 素材类型是背景，还是各种类型表情
 var choosedPicVal = ''; // 点选背景模板，表情模板的值，即图片src
 
+$('body').bind('touchmove', function (e) {
+    e.preventDefault();
+}); // 禁止页面滚动
+
 // 预加载
 var sourceArr = [
     'images/adjust-guide.png',
@@ -373,7 +377,7 @@ $('.sc-mb-item').on('touchstart', function () {
 function goToTemplatePage() {
     // 先判断是否上传了照片，没上传需alert并return
     var templatePageShow = new TimelineMax({
-        onStart: initSwiper,
+        // onStart: initSwiper,
         onComplete: function () {
             hideAdjustGuide();
         }
@@ -408,6 +412,11 @@ function hideAdjustGuide() {
         .set('#adjust-guide', {display: 'none'});
 }
 
+Draggable.create("#text-lists", {type:"scrollTop",
+   edgeResistance:0.1,
+   throwProps:true,
+});
+
 // 模板页表情模板、配文按钮切换
 function changeMbTextTabs() {
     console.log(this);
@@ -415,11 +424,13 @@ function changeMbTextTabs() {
     $(this).addClass('active-tab');
     if (this.id == 'mb-tab') {
         console.log('表情模板tab');
-        TweenMax.to(['#template-text', '#personal-input'], 0.4, {autoAlpha: 0});
-        TweenMax.to('#template-pics', 0.4, {autoAlpha: 1});
+        TweenMax.to(['#template-pics', '#personal-input'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#template-text', 0.4, {autoAlpha: 1});
     }else if (this.id == 'text-tab') {
         console.log('配文模板');
-        showTextTypeChoose();
+        // showTextTypeChoose();
+        TweenMax.to(['#template-pics', '#template-text'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#personal-input', 0.4, {autoAlpha: 1});
     }
 }
 
