@@ -44,6 +44,8 @@ var sourceArr = [
     'images/logo.png',
     'images/mb-text-bg.png',
     'images/mb-text-btn.png',
+    'images/music-bg.png',
+    'images/music-icon.png',
     'images/personal-text-btn.png',
     'images/daily/0806.png',
     'images/daily/0807.png',
@@ -60,7 +62,8 @@ var sourceArr = [
     'images/tap-me.png',
     'images/text-bg.png',
     'images/theme.png',
-    'images/upload-icon.png'
+    'images/upload-icon.png',
+    'media/bgmusic.mp3'
 ]; //需要加载的资源列表
 
 new mo.Loader(sourceArr,{
@@ -445,12 +448,14 @@ $('.sc-mb-item').on('touchstart', function () {
 function goToTemplatePage() {
     // 先判断是否上传了照片，没上传需alert并return
     var templatePageShow = new TimelineMax({
-        // onStart: initSwiper,
+        onStart: initSwiper,
         onComplete: function () {
             hideAdjustGuide();
         }
     });
     templatePageShow.set('#template', {display: 'block', x: 640, autoAlpha: 1})
+        .set('#template-pics', {autoAlpha: 1})
+        .set(['#template-text', '#personal-input'], {autoAlpha: 0})
         .to('#upload-page', 0.4, {x: -640, ease: Power3.easeInOut})
         .to('#template', 0.4, {x: 0, ease: Power3.easeInOut}, '-=0.4')
         .set('#upload-page', {display: 'none', autoAlpha: 0})
@@ -498,13 +503,15 @@ function changeMbTextTabs() {
     $(this).addClass('active-tab');
     if (this.id == 'mb-tab') {
         console.log('表情模板tab');
-        TweenMax.to(['#template-pics', '#personal-input'], 0.4, {autoAlpha: 0});
-        TweenMax.to('#template-text', 0.4, {autoAlpha: 1});
+        // TweenMax.to(['#template-pics', '#personal-input'], 0.4, {autoAlpha: 0});
+        // TweenMax.to('#template-text', 0.4, {autoAlpha: 1});
+        TweenMax.to(['#template-text', '#personal-input'], 0.4, {autoAlpha: 0});
+        TweenMax.to('#template-pics', 0.4, {autoAlpha: 1});
     }else if (this.id == 'text-tab') {
         console.log('配文模板');
-        // showTextTypeChoose();
-        TweenMax.to(['#template-pics', '#template-text'], 0.4, {autoAlpha: 0});
-        TweenMax.to('#personal-input', 0.4, {autoAlpha: 1});
+        showTextTypeChoose();
+        // TweenMax.to(['#template-pics', '#template-text'], 0.4, {autoAlpha: 0});
+        // TweenMax.to('#personal-input', 0.4, {autoAlpha: 1});
     }
 }
 
